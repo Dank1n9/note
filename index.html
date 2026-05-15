@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>本期笔记</title>
+    <title>C3_02</title>
     <style>
         * {
             margin: 0;
@@ -133,14 +133,37 @@
     <div class="container">
         <div class="note-block">
             <div class="note-header">
-                <div class="period-badge">本期笔记</div>
-                <div class="note-title">笔记标题</div>
-                <div class="note-date">2023年11月15日</div>
+                <div class="period-badge">C3_02</div>
+                <div class="note-title">排列组合</div>
+                <div class="note-date">2026年05月15日</div>
             </div>
 
             <div class="note-body">
                 <div class="section-title">主要内容</div>
                 <div class="content-area">
+#by < Shiorko >
+
+排列：
+    定义：
+    从n个不同元素中取出m个（m≤n）不同元素，按照一定顺序排成一列
+    顺序很重要，不同的排队方式就是不同的排列
+
+排列枚举：
+    定义：
+    就是枚举所有元素的排列情况
+
+
+函数：
+    [
+        next_permutation(start, end) 
+        函数按照字典序生成现有序列的下一个较大的序列，并将结果保存在原来的地址中
+        cout<< next_permutation(start, end)  << endl;    若下一个序列存在，next_permutation() 返回真（true/1）；否则返回假（false/0）
+        !该函数收纳于 C++ 标准库  < algorithm >  中。不存在  < iostream >  !
+        
+        判断下一序列是否存在：
+            while(next_permutation(start, end)) //如果存在则继续运行 否则结束循环
+    ]
+
 
                 </div>
             </div>
@@ -148,6 +171,7 @@
 
         <div class="footer">
             仅展示当期笔记 一周一变
+            © 2026 Shiorko. All rights reserved.
         </div>
     </div>
 </body>
