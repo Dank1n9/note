@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C3_02</title>
+    <title>C3_03</title>
     <style>
         * {
             margin: 0;
@@ -133,52 +133,39 @@
     <div class="container">
         <div class="note-block">
             <div class="note-header">
-                <div class="period-badge">C3_02</div>
-                <div class="note-title">排列组合</div>
-                <div class="note-date">2026年05月15日</div>
+                <div class="period-badge">C3_03</div>
+                <div class="note-title">多维数组</div>
+                <div class="note-date">2026年05月22日</div>
             </div>
 
             <div class="note-body">
                 <div class="section-title">主要内容</div>
                 <div class="content-area">
-#by < Shiorko >
-
-排列
-
-定义：从n个不同元素中取出m个（m≤n）不同元素，按照一定的顺序排成一列，叫做从n个元素中取出m个元素的一个排列。
-特殊情况：当m=n时，这个排列被称作全排列，即取出所有元素进行排列。
-全排列个数：n个元素的全排列个数为n!（n的阶乘），即n×(n-1)×(n-2)×...×2×1。
-
-排列枚举
-
-定义：枚举所有元素的排列情况，即列出所有可能的排列。
-计算限制：计算机1秒钟很难枚举超过12个元素的所有全排列。这是因为排列个数随元素数量n增长而快速增长（n!增长极快），例如：
-10个元素的全排列有10!=3,628,800个
-12个元素的全排列有12!=479,001,600个
-13个元素的全排列有13!=6,227,020,800个
+<!----由此顶格添加----->
+多维数组：
+    <span style="color: #FF7800">二维数组：</span> {
+            类似一个平面，相当于多个一维数组
+            元素含量= 行 × 列
+            行/列 下标从0开始
+            <span style="color: #005DFF">第一个[]意为行</span> 
+	    <span style="color: #005DFF">第二个[]意为列</span> }
 
 
 
-函数：
-    [
-        next_permutation(start, end) 
-        函数按照字典序生成现有序列的下一个较大的序列，并将结果保存在原来的地址中
-        cout<< next_permutation(start, end)  << endl;    若下一个序列存在，next_permutation() 返回真（true/1）；否则返回假（false/0）
-        !该函数收纳于 C++ 标准库 < algorithm >中
-        
-        判断下一序列是否存在：
-            while(next_permutation(start, end)) //如果存在则继续运行 否则结束循环
-    ]
-
-    [
-        sort(start, end)
-        函数会将序列中的元素从小到大排序，并将排序后的结果保存在原来的地址中
-        该函数收纳于C++标准库< algorithm >中。
-    ]
 
 
-
-                </div>
+声明：
+    整数二维数组
+            { <span style="color: #FF002D">int a[X][X];</span> }
+    <span style="color: #02FF00">初始化</span>二维数组
+            { <span style="color: #FF0000">int a[3][3]={1,2,3,4,5,6,7,8,9};</span> 当前a内容：
+                        <span style="color: #00FF6F">[1 2 3]
+                        			[4 5 6]
+                        			[7 8 9]</span> }
+    省略行长度
+            {
+                                    <span style="color: #FF0000">int a[][X];</span> (<span style="color: #0100FF">X不能省略！！！</span>)  【当行长度达到X时自动换行】
+            } </div>
             </div>
         </div>
 
