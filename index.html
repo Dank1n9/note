@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C3_03</title>
+    <title>C3_04</title>
     <style>
         * {
             margin: 0;
@@ -133,39 +133,37 @@
     <div class="container">
         <div class="note-block">
             <div class="note-header">
-                <div class="period-badge">C3_03</div>
-                <div class="note-title">多维数组</div>
-                <div class="note-date">2026年05月22日</div>
+                <div class="period-badge">C3_04</div>
+                <div class="note-title">枚举应用</div>
+                <div class="note-date">2026年05月29日</div>
             </div>
 
             <div class="note-body">
                 <div class="section-title">主要内容</div>
                 <div class="content-area">
 <!----由此顶格添加----->
-多维数组：
-    <span style="color: #FF7800">二维数组：</span> {
-            类似一个平面，相当于多个一维数组
-            元素含量= 行 × 列
-            行/列 下标从0开始
-            <span style="color: #005DFF">第一个[]意为行</span> 
-	    <span style="color: #005DFF">第二个[]意为列</span> }
+按位或：
+    是一种二进制运算符
+    用符号 | 表示
+    它会对两个数的每一位进行比较，只要对应的两个二进制位中有一个是1，结果的那一位就是1；只有当两个位都是0时，结果才是0
+    {有1就1}
+    示例：
+                  5 的二进制：0101
+                  3 的二进制：0011
+                  5 | 3 结果：0111（也就是十进制的7）
 
+按位与：
+    按位与是一个二进制运算符
+    用符号 & 表示
+    它的规则和按位或刚好相反
+    只有两个对应的二进制位同时为1时，结果的那一位才是1；只要有一个是0，结果就是0
+    {都有1才是1}
+    示例：
+                  5 的二进制：0101
+                  3 的二进制：0011
+                  5 & 3 结果：0001（也就是十进制的1）
 
-
-
-
-声明：
-    整数二维数组
-            { <span style="color: #FF002D">int a[X][X];</span> }
-    <span style="color: #02FF00">初始化</span>二维数组
-            { <span style="color: #FF0000">int a[3][3]={1,2,3,4,5,6,7,8,9};</span> 当前a内容：
-                                <span style="color: #00FF6F">[1 2 3]
-                        			[4 5 6]
-                        			[7 8 9]</span> }
-    省略行长度
-            {
-                                    <span style="color: #FF0000">int a[][X];</span> (<span style="color: #0100FF">X不能省略！！！</span>)  【当行长度达到X时自动换行】
-            } </div>
+</div>
             </div>
         </div>
 
