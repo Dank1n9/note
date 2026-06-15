@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C3_05</title>
+    <title>C3_06</title>
     <style>
         * {
             margin: 0;
@@ -133,94 +133,55 @@
     <div class="container">
         <div class="note-block">
             <div class="note-header">
-                <div class="period-badge">C3_05</div>
+                <div class="period-badge">C3_06</div>
                 <div class="note-title">指针</div>
-                <div class="note-date">2026年06月5日</div>
+                <div class="note-date">2026年06月12日</div>
             </div>
 
             <div class="note-body">
                 <div class="section-title">主要内容</div>
                 <div class="content-area">
 <!----由此顶格添加----->
-指针：
-    指针是C++中一种变量，它存储的是另一块内存的地址
-    通过指针可以间接访问、修改该地址上的数据
-    常见用法包括动态内存分配、数组遍历、函数参数传递（实现引用效果）等
-    声明时用 *，取地址用 &，解引用用 *
-    数据类型是什么，表示指针指向的就是什么数据类型
-    指针占内存！ 32位系统占4字节 64位系统占8字节
+int arr[3]={10,20,30};
+cout&lt;&lt;arr;  //输出第一个元素的内存地址
+cout&lt;&lt;arr+1;  //输出第二个元素的内存地址  以此类推
+cout&lt;&lt;*arr+1;  //输出11
+cout&lt;&lt;*(arr+1);  //输出20
 
 
+指针修改数组元素：
+直接通过数组名（指针常量）修改元素
 
-示例：
-    {
-        声明：
-            int *p;
-            double *p;
-            int * p;
-            double * p;
-    }
+int arr[3] = {10, 20, 30};
+*(arr + 1) = 200;  // 将第2个元素（下标为1）从20修改为200
 
-    {
-        指针的初始化:
-            指针变量 = &指向的变量;
-            
-            int a = 10;变量初始化
-            int *p = &a;指针初始化
-            
-            //int a = 10; — 定义了一个整型变量 a，其值为 10。
-            //int *p = &a; — 定义了一个指向整型数据的指针 p，并通过 &a 获取变量 a 的内存地址，将该地址赋值给指针 p。
-            //如果 a 的地址为 '0x7ffeef3a4b8c' 则经过以上代码后 p 为 '0x7ffeef3a4b8c'（十六进制）
-    }
+通过指针变量修改元素
 
-    {
-        空指针(当暂时无地址时)：
-            int *p = nullptr; C++11后可写，更旧可用'NULL'    无nullptr时 p 为随机指针（野指针）！！！（野指针不能用啊）
-            int a = 10;
-            p = &a;当有变量时可被附上地址
-            
-    }
+int arr[3] = {10, 20, 30};
+int* p = arr;      // 将数组名赋值给指针变量p
+*(p + 1) = 200;    // 通过指针变量p将第2个元素修改为200
 
-    {
-        解引用：
-            int a = 10;
-            int *p = &a;   // p 存储了 a 的地址
-            // 此时 p 的值是 a 的地址，例如 0x7ffeef3a4b8c
-            // *p 就是"去这个地址上拿数据"，即拿到 a 的值 10
-            cout<<*p; // 输出 10
+两者都能通过 *(指针 + 偏移量) 的方式访问并修改数组中的元素
 
-            变量 a（地址 0x...b8c）：  [10]
-            指针 p：                   [0x...b8c]  ← p 存的是地址
-            *p：                      [10]        ← *p 就是"去这个地址拿数据"，拿到 10
-            
-            可以直接修改原变量
-            *p = 114;  //此时 a=114
-            
-            //不要随便解引用空指针啊喂！！！！会爆炸啊！！！！
-    }
 
-    {
-        修改指针指向：
-            int a = 10;
-            int b = 20;
-            int *p = &a;    // p 指向 a
-            cout << *p << endl;  // 输出 10，因为 p 指向的是 a
-            p = &b;           // 修改指针指向，让 p 指向 b
-            cout << *p << endl;  // 输出 20，因为 p 现在指向的是 b
+指针的加减运算是以元素大小为单位移动的，而非以字节为单位。指针 +1 移动到下一个元素，-1 移动到上一个元素
 
-            第一步：
-            变量 a [10]   ←  p 指向 a
-            变量 b [20]
-            第二步：
-            变量 a [10]
-            变量 b [20]   ←  p 指向了 b（指向被修改）
 
-            // 修改指向
-            p = &b;        // 	p 指向了另一个变量，a 的值不变
-            // 修改数据
-            *p = 30;       // p 指向不变，但该地址上的数据被改了
+char a[20] = "Hello!";
+char *p = a;
+cout &lt;&lt; *p &lt;&lt; endl;   // 解引用，输出单个字符 → H
+cout &lt;&lt; p &lt;&lt; endl;    // 输出指针指向的整个字符串 → Hello!
+p++;                  // 指针向前移动一个元素，从 a[0] 移到 a[1]
+cout &lt;&lt; *p &lt;&lt; endl;   // 解引用，输出当前元素 → e
+cout &lt;&lt; p &lt;&lt; endl;    // 从当前位置输出整个字符串 → ello!
 
-    }
+
+int arr[3]={10,20,30};
+int *p=NULL;  //定义一个空指针
+p=arr;  // 当前*p=10
+p++;  //指针向前移动一个字符
+cout&lt;&lt;*p&lt;&lt;"\n";  //输出20
+
 </div>
             </div>
         </div>
